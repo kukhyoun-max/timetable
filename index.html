@@ -8,7 +8,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap');
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{--bg:#f4f6fb;--surface:#fff;--surface2:#f0f2f8;--border:#e2e5ef;--bs:#c8cad8;--text:#1a1d2e;--muted:#8b90a7;}
-body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--text);padding:24px;}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--text);padding:16px;}@media(max-width:600px){body{padding:10px;}.frow{padding:10px 12px!important;gap:10px!important;}.fc{border-radius:10px;}.tabs{width:100%;}.tab{flex:1;text-align:center;}}
 h1{font-size:20px;font-weight:800;letter-spacing:-.5px;margin-bottom:8px;}
 /* stats */
 .stats{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;}
@@ -18,12 +18,12 @@ h1{font-size:20px;font-weight:800;letter-spacing:-.5px;margin-bottom:8px;}
 .sbadge .n{font-weight:800;}
 /* filter card */
 .fc{background:#fff;border:1px solid var(--border);border-radius:14px;margin-bottom:12px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.05);}
-.frow{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;padding:14px 18px;}
+.frow{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;padding:14px 18px;min-width:0;}
 .frow.rp{background:#fafbff;}
 .frow.rt{background:#f8f9fc;border-top:1px solid var(--border);}
 .fg{display:flex;flex-direction:column;gap:6px;}
 .fg label{font-size:10px;font-weight:800;letter-spacing:1px;color:var(--muted);text-transform:uppercase;}
-.crow{display:flex;gap:5px;flex-wrap:wrap;}
+.crow{display:flex;gap:5px;flex-wrap:wrap;}.crow.scroll{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:2px;}.crow.scroll::-webkit-scrollbar{display:none;}
 .chip{padding:5px 12px;border-radius:20px;border:1.5px solid var(--border);background:var(--surface2);color:var(--muted);font-size:12px;font-weight:600;cursor:pointer;transition:all .15s;font-family:inherit;}
 .chip:hover{border-color:var(--bs);color:var(--text);}
 .chip.tall{background:#6366f1;border-color:#6366f1;color:#fff;}
@@ -104,7 +104,7 @@ tr.lr{height:28px;}
     <div style="width:1px;height:36px;background:var(--border);align-self:flex-end;margin-bottom:2px;"></div>
     <div class="fg" style="flex:1;min-width:0;">
       <label>인원 선택</label>
-      <div class="crow" id="personChips"></div>
+      <div class="crow scroll" id="personChips"></div>
     </div>
   </div>
   <div class="frow rt">
